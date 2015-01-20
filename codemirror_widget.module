@@ -96,8 +96,8 @@ function codemirror_widget_field_widget_form(&$form, &$form_state, $field, $inst
   $settings = array(
     $delta => $instance['widget']['settings'],
   );
-  //libraries_load('codemirror');
-  $main_widget = array();
+
+  $library_path = 'libraries/codemirror';
   $main_widget = $element + array(
     '#type' => 'textarea',
     '#default_value' => isset($items[$delta]['value']) ? $items[$delta]['value'] : '',
@@ -109,14 +109,14 @@ function codemirror_widget_field_widget_form(&$form, &$form_state, $field, $inst
           'type' => 'file',
         ),
         array(
-          'data' => libraries_get_path('codemirror') . '/lib/codemirror.js',
+          'data' => $library_path . '/lib/codemirror.js',
           'weight' => -10,
           'type' => 'file',
         ),
       ),
       'css' => array(
         array(
-          'data' => libraries_get_path('codemirror') . '/lib/codemirror.css',
+          'data' => $library_path . '/lib/codemirror.css',
           'type' => 'file',
         ),
       ),
@@ -136,13 +136,13 @@ function codemirror_widget_field_widget_form(&$form, &$form_state, $field, $inst
   $theme = $instance['widget']['settings']['theme'];
   if ($theme != 'default') {
     $main_widget['#attached']['css'][] = array(
-      'data' => libraries_get_path('codemirror') . "/theme/{$theme}.css",
+      'data' => $library_path . "/theme/{$theme}.css",
       'type' => 'file',
     );
   }
   $mode = $instance['widget']['settings']['mode'];
   $main_widget['#attached']['js'][] = array(
-    'data' => libraries_get_path('codemirror') . "/mode/{$mode}/{$mode}.js",
+    'data' => $library_path . "/mode/{$mode}/{$mode}.js",
     'type' => 'file',
     'weight' => '10',
   );
@@ -151,26 +151,29 @@ function codemirror_widget_field_widget_form(&$form, &$form_state, $field, $inst
   return $element;
 }
 
-
 function _codemirror_get_available_modes() {
-  $modes = file_scan_directory(libraries_get_path('codemirror') . '/mode',
-    '/.*/', array('recurse' => FALSE, 'key' => 'name'));
+  $library_path = 'libraries/codemirror/mode';
+  $modes = file_scan_directory($library_path, '/.*/', array(
+    'recurse' => FALSE,
+    'key' => 'name',
+    )
+  );
   foreach ($modes as $name => $file) {
     $modes[$name] = $name;
   }
-  ksort($modes);
   return $modes;
 }
 
 function _codemirror_get_available_themes() {
-  $themes = file_scan_directory(libraries_get_path('codemirror') . '/theme',
-    '/\.css/', array('key' => 'name'));
+  $library_path = 'libraries/codemirror/theme';
+  $themes = file_scan_directory($library_path, '/\.css/', array(
+    'key' => 'name',
+    )
+  );
   foreach ($themes as $name => $theme) {
     $themes[$name] = $name;
   }
-  $themes = array('default' => 'default') + $themes;
-  ksort($themes);
-  return $themes;
+  return array('default' => 'default') + $themes;
 }
 
 
