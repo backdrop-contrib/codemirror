@@ -7,7 +7,7 @@ function codemirror_widget_library_info() {
   $libraries['codemirror'] = array(
     'title' => 'CodeMirror',
     'website' => 'http://codemirror.net/',
-    'version' => '',
+    'version' => '4.11',
     'js' => array(
       'libraries/codemirror/codemirror.js',
     ),
