@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Implements hook_library_info().
+ */
 function codemirror_widget_library_info() {
   $libraries['codemirror'] = array(
     'title' => 'CodeMirror',
@@ -23,14 +26,14 @@ function codemirror_widget_field_widget_info() {
   return array(
     'text_codemirror' => array(
       'label' => t('CodeMirror'),
+      'description' => t('Text area edit widget using the CodeMirror library'),
       'field types' => array('text_long'),
       'settings' => array(
         'mode' => 'css',
         'theme' => 'default',
         'autoresize' => TRUE,
         'rows' => 9,
-        'plugins' => array(
-        ),
+        'plugins' => array(),
       ),
       'behaviors' => array(
         'multiple values' => FIELD_BEHAVIOR_DEFAULT,
