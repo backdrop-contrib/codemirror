@@ -1,18 +1,15 @@
 <?php
 
-function codemirror_widget_libraries_info() {
-  $libraries = array();
+function codemirror_widget_library_info() {
   $libraries['codemirror'] = array(
-    'name' => 'CodeMirror',
-    'vendor url' => 'http://codemirror.net/',
-    'download url' => 'https://github.com/marijnh/CodeMirror/downloads',
-    'files' => array(
-      'js' => array(
-        'lib/codemirror.js',
-      ),
-      'css' => array(
-        'lib/codemirror.css',
-      ),
+    'title' => 'CodeMirror',
+    'website' => 'http://codemirror.net/',
+    'version' => '',
+    'js' => array(
+      'libraries/codemirror/codemirror.js',
+    ),
+    'css' => array(
+      'libraries/codemirror/codemirror.css',
     ),
   );
   return $libraries;
