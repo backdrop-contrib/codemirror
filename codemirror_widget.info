@@ -1,3 +1,3 @@
 name = CodeMirror Widget
 description = Text area edit widget using the CodeMirror library
-core = 7.x
+backdrop = 1.x
