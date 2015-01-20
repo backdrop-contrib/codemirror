@@ -11,7 +11,7 @@ functionality to your text fields in Backdrop.
 4. Rename the expanded folder (most likely codemirror-4.11) to `codemirror`. 
 5. Make sure the full path is `[backdrop installation]/libraries/codemirror`.
 6. Enable the module at `[your web address]/admin/modules/list` under "Other".
-7. You can now configure any existing text field at `[you web address]/admin/structure/types/manage/[your content type]/fields` to use the CodeMirror widget.
+7. You can now configure any existing text field at `[your web address]/admin/structure/types/manage/[your content type]/fields` to use the CodeMirror widget.
 8. Configure your widget at `[your web address]/admin/structure/types/manage/[your content type]/fields/[your field]`.
 
 ## License
@@ -23,4 +23,4 @@ This project is GPL v2 software. See the LICENSE.txt file in this directory for 
 
 ## Credits
 
-This module was originally written for Drupal by Darren Mothersele (https://www.drupal.org/u/darrenmothersele), based on  Marijn Haverbeke CodeMirror project (http://codemirror.com/).
+This module was [originally written for Drupal](https://www.drupal.org/project/codemirror) by [Darren Mothersele](https://www.drupal.org/u/darrenmothersele), based on  Marijn Haverbeke's [CodeMirror project](http://codemirror.com/).
