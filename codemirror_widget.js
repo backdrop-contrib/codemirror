@@ -2,7 +2,7 @@
 
   var codeMirrorEditors = [];
 
-  Drupal.behaviors.codemirrorWidget = {
+  Backdrop.behaviors.codemirrorWidget = {
     attach: function (context, settings) {
       $('textarea.codemirror', context).each(function (i, v) {
         //console.log($(this));
@@ -10,7 +10,7 @@
         $(this).once('codemirror', function () {
           codeMirrorEditors.push(CodeMirror.fromTextArea($(this).get(0), {
             lineNumbers: true,
-            theme: Drupal.settings.codemirror[i].theme,
+            theme: Backdrop.settings.codemirror[i].theme,
           }));
         });
       });
@@ -39,7 +39,7 @@
         var id = $(this).attr('id');
         var editor = CodeMirror.fromTextArea($(this).get(0), {
           lineNumbers: true,
-          theme: Drupal.settings.codemirror[id].theme,
+          theme: Backdrop.settings.codemirror[id].theme,
         });
       });
       */
@@ -65,7 +65,7 @@
 
       }
       */
-    },
+    }
   };
 
 })(jQuery);

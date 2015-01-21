@@ -104,7 +104,7 @@ function codemirror_widget_field_widget_form(&$form, &$form_state, $field, $inst
     '#attached' => array(
       'js' => array(
         array(
-          'data' => drupal_get_path('module', 'codemirror_widget') . '/codemirror_widget.js',
+          'data' => backdrop_get_path('module', 'codemirror_widget') . '/codemirror_widget.js',
           'type' => 'file',
         ),
         array(
